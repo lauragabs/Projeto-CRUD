@@ -25,7 +25,7 @@ public class ClienteRepository {
         return this.clientes;
     }
 
-    // Buscar por um cliente único
+
     public Cliente buscarPorId(Integer id) {
         for (Cliente cliente : this.clientes) {
             if (cliente.getId() == id) {
@@ -35,7 +35,7 @@ public class ClienteRepository {
         return null; 
     }
 
-    // Buscar por nome
+
     public List<Cliente> buscarPorNome(String nome) {
         List<Cliente> clienteBusca = new ArrayList<>();
         for (Cliente cliente : this.clientes) {
@@ -46,7 +46,6 @@ public class ClienteRepository {
         return clienteBusca;
     }
 
-    //Buscar por login
     public Cliente buscarPorLogin(String login) {
         for (Cliente cliente : clientes) {
             if (cliente.getLogin().equals(login)) { 
@@ -56,12 +55,10 @@ public class ClienteRepository {
         return null;
     }
 
-    //Adicionar um novo cliente
     public void adicionar(Cliente cliente) {
         clientes.add(cliente);
     }
 
-    //deletar um cliente
     public void deletar(Integer id) {
         Cliente clienteParaRemover = buscarPorId(id);
         if (clienteParaRemover != null) {
@@ -69,7 +66,6 @@ public class ClienteRepository {
         }
     }
 
-    // atualizar um cliente
     public boolean update(Cliente cliente) {
         for (int i = 0; i < clientes.size(); i++) {
             Cliente clienteExistente = clientes.get(i);
